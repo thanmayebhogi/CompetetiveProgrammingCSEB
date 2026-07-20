@@ -16,13 +16,15 @@ public class Solution {
         int sum=0;
         int maxsum=Integer.MIN_VALUE;
         for(int i=0;i<n;i++){
-          sum=0;
-          for(int j=i;j<n;j++){
-          sum=sum+arr[j];
+        
+          sum=sum+arr[i];
           if(sum>maxsum){
             maxsum=sum;
           }
-        }}
+          if(sum<0){
+            sum=0;
+          }
+        }
         System.out.print(maxsum);
     }
 }
