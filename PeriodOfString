@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+
+        for (int i = 1; i <= s.length(); i++) {
+
+         
+            String k = s.substring(0, i);
+
+            String m = "";
+
+            
+            for (int j = 0; j < s.length() / i; j++) {
+                m = m + k;
+            }
+
+            
+            if (m.equals(s)) {
+                System.out.println(i);
+                return;
+            }
+        }
+    }
+}
