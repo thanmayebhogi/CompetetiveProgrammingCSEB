@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+class Solution{
+
+static int binaryGcd(int a,int b){
+if(a==0) return b;
+if(b==0) return a;
+if(a%2==0 && b%2==0){
+return 2*binaryGcd(a/2,b/2);
+}
+if(a%2==0){
+return binaryGcd(a/2,b);
+}
+if(b%2==0){
+return binaryGcd(a,b/2);
+}
+if(a>b){
+return binaryGcd((a-b)/2,b);
+}
+else{
+return binaryGcd(a,(b-a)/2);
+}
+}
+public static void main(String args[]){
+Scanner sc =new Scanner(System.in);
+int a=sc.nextInt();
+int b=sc.nextInt();
+System.out.println(binaryGcd(a,b));
+}
+}
+
